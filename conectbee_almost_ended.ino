@@ -27,7 +27,7 @@ bool is_authenticated() {
   return false;
 }
 
-//login page, also called for disconnect
+
 void handleLogin() {
   String msg;
   if (server.hasHeader("Cookie")) {
@@ -98,10 +98,10 @@ void handleNotFound() {
 void setup(void){
   Serial.begin(9600);
   Serial.println("");
-  WiFi.mode(WIFI_AP);           //Only Access point
-  WiFi.softAP(ssid, password);  //Start HOTspot removing password will disable security
+  WiFi.mode(WIFI_AP);           
+  WiFi.softAP(ssid, password);  
 
-  IPAddress myIP = WiFi.softAPIP(); //Get IP address
+  IPAddress myIP = WiFi.softAPIP(); 
   Serial.print("ip:");
   Serial.println(myIP);
  
@@ -118,7 +118,7 @@ void setup(void){
 }
 
 void loop(void){
-  server.handleClient();          //Handle client requests
+  server.handleClient();          
   readMasterPort();
   
   }
@@ -126,7 +126,7 @@ void readMasterPort(){
 while (ArduinoMaster.available()) {
   delay(10);
   if (ArduinoMaster.available() >0) {
-    char c = ArduinoMaster.read();  //gets one byte from serial buffer
+    char c = ArduinoMaster.read();  
     msg += c; 
     Serial.println(msg);
   }
