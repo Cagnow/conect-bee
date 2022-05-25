@@ -5,7 +5,7 @@
 SoftwareSerial ArduinoMaster(5,6);
 String msg;
 
-//SSID and Password to your ESP Access Point
+
 const char* ssid = "conectbee";
 const char* password = "12345678";
 
